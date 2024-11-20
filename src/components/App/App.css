@@ -1,0 +1,91 @@
+.container {
+  max-width: 1200px; /* Максимальная ширина */
+  margin: 0 auto; /* Центрирование страницы */
+  padding: 20px; /* Внутренний отступ */
+  background-color: #f5f5f5; /* Цвет фона */
+  border-radius: 8px; /* Закруглённые углы */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для контраста */
+}
+
+/* Общее выравнивание текста */
+.container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Для заголовков */
+h1, h2 {
+  color: #333;
+}
+
+.admin-dashboard {
+  background-color: #f5f5dc; /* Цвет фона */
+  min-height: 100vh;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top-bar {
+  width: 100%;
+  max-width: 1200px; /* Ограничение ширины */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.main-content {
+  display: flex;
+  width: 100%;
+  max-width: 1200px; /* Ограничение ширины */
+}
+
+.left-section {
+  width: 40%;
+  margin-right: 20px;
+  padding: 20px;
+  background-color: #e8e8d0;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.right-section {
+  width: 60%;
+  padding: 20px;
+  background-color: #fffaf0;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logout-button {
+  padding: 10px 20px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background-color: #c82333;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Центрирование страницы */
+  align-items: center;
+  background-color: #f5f5dc;
+}
+
+.container {
+  max-width: 1200px; /* Ограничение ширины */
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}

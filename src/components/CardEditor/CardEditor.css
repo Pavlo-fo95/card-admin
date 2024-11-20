@@ -1,0 +1,19 @@
+.card-editor .generate-button {
+  background-color: #007bff;
+  color: white;
+}
+
+.card-editor .save-button {
+  background-color: #28a745;
+  color: white;
+}
+
+.card-editor .delete-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+.card-editor .cancel-button {
+  background-color: #6c757d;
+  color: white;
+}
