@@ -27,7 +27,7 @@ const App: React.FC = () => {
     axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('token')}`;
     try { 
       setError(null); // Очистка ошибок перед новым запросом
-      const response = await axios.get<Card[]>('http://localhost:5283/api/Admin/cards');
+      const response = await axios.get<Card[]>('https://cardadmin20241120223114.azurewebsites.net/api/Admin/cards');
       console.log('Данные карточек:', response.data);
       setCards(response.data);
     } catch (err) {
@@ -49,7 +49,7 @@ const App: React.FC = () => {
       if (updatedCard.id) {
         // Обновление карточки
         const response = await axios.put(
-          `http://localhost:5283/api/Admin/cards/${updatedCard.id}`,
+          `https://cardadmin20241120223114.azurewebsites.net/api/Admin/cards/${updatedCard.id}`,
           updatedCard
         );
         console.log('Обновленная карточка:', response.data);
@@ -58,7 +58,7 @@ const App: React.FC = () => {
         );
       } else {
         // Добавление новой карточки
-        const response = await axios.post('http://localhost:5283/api/Admin/cards', updatedCard);
+        const response = await axios.post('https://cardadmin20241120223114.azurewebsites.net/api/Admin/cards', updatedCard);
         console.log('Новая карточка:', response.data);
         setCards((prev) => [...prev, response.data]);
       }
@@ -74,7 +74,7 @@ const App: React.FC = () => {
     axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('token')}`;
     try {
       setError(null); // Очистка ошибок перед началом операции
-      await axios.delete(`http://localhost:5283/api/Admin/cards/${id}`);
+      await axios.delete(`https://cardadmin20241120223114.azurewebsites.net/api/Admin/cards/${id}`);
       console.log('Карточка удалена:', id);
       setCards((prev) => prev.filter((card) => card.id !== id));
       setSelectedCardId(null);
