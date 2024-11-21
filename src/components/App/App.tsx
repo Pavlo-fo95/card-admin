@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback} from 'react';
 import LoginForm from '../Auth/LoginForm';
 import AdminTable from '../AdminTable/AdminTable';
 import CardEditor from '../CardEditor/CardEditor';
@@ -23,7 +23,7 @@ const App: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
 
   // Загрузка данных карточек
-  const fetchCards = async () => {
+  const fetchCards = useCallback(async () => {
     axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('token')}`;
     try { 
       setError(null); // Очистка ошибок перед новым запросом
@@ -34,12 +34,12 @@ const App: React.FC = () => {
       setError('Ошибка при загрузке данных. Проверьте подключение к серверу.');
       console.error('Ошибка при загрузке данных:', error);     
     }
-  };
+  },[error]);
 
   // Загружаем данные при монтировании компонента
   useEffect(() => {
     fetchCards();
-  }, []);
+  }, [fetchCards]);
 
   // Сохранение карточки (добавление/обновление)
   const handleSave = async (updatedCard: Card) => {
