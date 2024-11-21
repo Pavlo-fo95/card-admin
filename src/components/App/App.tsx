@@ -31,8 +31,8 @@ const App: React.FC = () => {
       console.log('Данные карточек:', response.data);
       setCards(response.data);
     } catch (err) {
-      console.error('Ошибка при загрузке данных:', err);
       setError('Ошибка при загрузке данных. Проверьте подключение к серверу.');
+      console.error('Ошибка при загрузке данных:', error);     
     }
   };
 
